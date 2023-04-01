@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card card-1">
+        <div id="demo" class="container">
+          <ul class="carousel-indicators">
+            <a href="#myCollapse" data-bs-toggle="collapse">More Info</a>
+          </ul>
+
+          <div class="inner">
+            <div class="container active">
+              <div class="row">
+                <div class="col-6">
+                  <div>
+                    <p class="temp"><span class="temp">&deg;</span></p>
+                    <span class="units">
+                      <a href="#" id="celsius-link">&deg;C</a>
+                      |
+                      <a href="#" id="fahrenheit-link">°F</a>
+                    </span>
+                  </div>
+
+                  <div class="location" id="city">
+                    <h2 class="loca"></h2>
+                    <ul>
+                      <li id="date"></li>
+                      <li id="description">Partly Cloudy</li>
+                      <li>Humidity: <span id="humidity"></span>%</li>
+                      <li>Wind-Speed: <span id="wind-speed"></span> km/h</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-6 justify-content-right">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <form class="input-group form-class">
+                        <input
+                          type="text"
+                          class="btn btn-outline-secondary bg-white border-bottom-0 border rounded-pill ms-n7 datainput"
+                          placeholder="Enter City"
+                        />
+                        <span class="input-group-btn">
+                          <button class="btn btn-primary" type="submit">
+                            <i class="fa fa-search"></i>
+                          </button>
+                        </span>
+                      </form>
+                      <form>
+                        <button class="btn btn-success" id="current-location">
+                          Current
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                  <img class="img-icon" src="animated/sunny-day.svg" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="collapse hide" id="myCollapse">
+        <div class="card">
+          <div class="card card-2">
+            <div id="demo" class="container">
+              <div class="inner">
+                <div class="container active">
+                  <div class="row">
+                    <div class="col">
+                      <div class="row row1">21&deg;</div>
+                      <div class="row row2">
+                        <img class="img-icon" src="animated/sunny-day.svg" />
+                      </div>
+                      <div class="row row3">12:00</div>
+                      <div class="row row4">PM</div>
+                    </div>
+                    <div class="col">
+                      <div class="row row1">24&deg;</div>
+                      <div class="row row2">
+                        <img class="img-icon" src="animated/sunny-day.svg" />
+                      </div>
+                      <div class="row row3">1:00</div>
+                      <div class="row row4">PM</div>
+                    </div>
+                    <div class="col">
+                      <div class="row row1">24&deg;</div>
+                      <div class="row row2">
+                        <img class="img-icon" src="animated/cloudy.svg" />
+                      </div>
+                      <div class="row row3">2:00</div>
+                      <div class="row row4">PM</div>
+                    </div>
+                    <div class="col">
+                      <div class="row row1">20&deg;</div>
+                      <div class="row row2">
+                        <img class="img-icon" src="animated/cloudy-day-2.svg" />
+                      </div>
+                      <div class="row row3">3:00</div>
+                      <div class="row row4">PM</div>
+                    </div>
+                    <div class="col">
+                      <div class="row row1">15&deg;</div>
+                      <div class="row row2">
+                        <img class="img-icon" src="animated/rainy-6.svg" />
+                      </div>
+                      <div class="row row3">4:00</div>
+                      <div class="row row4">PM</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card card-3">
+        <div id="demo" class="container">
+          <div class="inner">
+            <div class="container active">
+              <div class="row">
+                <div class="col">
+                  <div class="row row1">21&deg;</div>
+                  <div class="row row2">
+                    <img class="img-icon" src="animated/sunny-day.svg" />
+                  </div>
+                  <div class="row row3">Mon</div>
+                </div>
+                <div class="col">
+                  <div class="row row1">24&deg;</div>
+                  <div class="row row2">
+                    <img class="img-icon" src="animated/sunny-day.svg" />
+                  </div>
+                  <div class="row row3">Tue</div>
+                </div>
+                <div class="col">
+                  <div class="row row1">13&deg;</div>
+                  <div class="row row2">
+                    <img class="img-icon" src="animated/cloudy.svg" />
+                  </div>
+                  <div class="row row3">Wed</div>
+                </div>
+                <div class="col">
+                  <div class="row row1">13&deg;</div>
+                  <div class="row row2">
+                    <img class="img-icon" src="animated/cloudy.svg" />
+                  </div>
+                  <div class="row row3">Thu</div>
+                </div>
+                <div class="col">
+                  <div class="row row1">20&deg;</div>
+                  <div class="row row2">
+                    <img class="img-icon" src="animated/rainy-1-day.svg" />
+                  </div>
+                  <div class="row row3">Fri</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="src/index.js"></script>
+  </body>
+</html>
